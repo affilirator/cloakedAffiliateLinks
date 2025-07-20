@@ -4,7 +4,7 @@ import { addDataAndFileToRequest, CollectionConfig } from 'payload'
 // patrick
 
 
-function selectWeightedDestination(
+export function selectWeightedDestination(
   destinations: Array<{ url: string; weight?: number; label?: string }>,
 ): string | null {
   if (!destinations) {
