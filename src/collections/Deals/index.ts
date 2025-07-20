@@ -1,4 +1,4 @@
-import { addDataAndFileToRequest, CollectionConfig } from 'payload'
+import {  CollectionConfig } from 'payload'
 
 // OfN2HYAIl71Myis9
 // patrick
@@ -6,7 +6,7 @@ import { addDataAndFileToRequest, CollectionConfig } from 'payload'
 
 export function selectWeightedDestination(
   destinations: Array<{ url: string; weight?: number; label?: string }>,
-): string | null {
+): string | null | undefined {
   if (!destinations) {
     return null;
   }
@@ -62,12 +62,12 @@ export const Deals: CollectionConfig = {
           },
         ],
       },
-      validate: (val) => {
+      /*validate: (val: string[] | null ) => {
         if (typeof val === 'string' && !val.startsWith('/go/')) {
           return 'Slug must start with /go/'
         }
         return true
-      },
+      },*/
 
       // You might want to add a custom validate function to ensure it starts with /go/
     },
@@ -82,7 +82,7 @@ export const Deals: CollectionConfig = {
           label: 'URL',
           type: 'text',
           required: true,
-          validate: (val) => {
+         /* validate: (val) => {
             if (
               typeof val === 'string' &&
               !val.startsWith('http://') &&
@@ -91,7 +91,7 @@ export const Deals: CollectionConfig = {
               return 'URL must start with http:// or https://'
             }
             return true
-          },
+          },*/
         },
         {
           name: 'weight', // Optional: for weighted redirects
