@@ -4,6 +4,7 @@ import {  addDataAndFileToRequest, CollectionConfig } from 'payload'
 // patrick
 
 
+
 export function selectWeightedDestination(
   destinations: Array<{ url: string; weight?: number; label?: string }>,
 ): string | null | undefined {
@@ -11,7 +12,7 @@ export function selectWeightedDestination(
     return null;
   }
 
-  let selectedUrl: string | null = null;
+  let selectedUrl: string | null | undefined = null;
   let totalWeight = 0;
 
   for (const dest of destinations) {
