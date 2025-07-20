@@ -145,7 +145,7 @@ export const Deals: CollectionConfig = {
       handler: async (req): Promise<Response> => {
         await addDataAndFileToRequest(req)
         // Extract slug from URL parameters
-        const {slug } = req.routeParams
+        const slug  = req.routeParams
 
         try {
           const result = await req.payload.find({
